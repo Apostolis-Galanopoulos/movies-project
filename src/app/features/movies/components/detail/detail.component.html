@@ -1,0 +1,61 @@
+<movie-button (clicked)="goBack()" label="Back"></movie-button>
+<div class="mt-2 detail-section">
+  <div class="detail-poster">
+    <img [src]="(movie$ | async)?.poster_path" />
+  </div>
+  <div class="detail-info">
+    <h1 class="title">{{ (movie$ | async)?.original_title }}</h1>
+    <div class="d-flex flex-column">
+      <label class="mt-2">Overview</label>
+      <p class="values p-0 mt-0 mb-0">{{ (movie$ | async)?.overview }}</p>
+    </div>
+    <!-- Budget -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">Budget</label>
+      <p class="values p-0 mt-0 mb-0">
+        {{ (movie$ | async)?.budget | currency }}
+      </p>
+    </div>
+    <!-- Budget -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">Release Date</label>
+      <p class="values p-0 mt-0 mb-0">
+        {{ (movie$ | async)?.release_date | date: "shortDate" }}
+      </p>
+    </div>
+    <!-- revenue -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">Revenue</label>
+      <p class="values p-0 mt-0 mb-0">
+        {{ (movie$ | async)?.revenue | currency }}
+      </p>
+    </div>
+
+    <!-- vote average -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">User Score</label>
+      <movie-rating
+        class="values p-0 mt-0 mb-0"
+        [rating]="(movie$ | async)?.vote_average"
+      ></movie-rating>
+    </div>
+
+    <!-- Ratings / vote_count -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">Ratings</label>
+      <p class="values p-0 mt-0 mb-0">{{ (movie$ | async)?.vote_count | number }}</p>
+    </div>
+    <!-- spoken languages -->
+    <div class="d-flex flex-column">
+      <label class="mt-2">Spoken Languages</label>
+      <div class="">
+        <ng-container *ngFor="let language of (movie$ | async)?.spoken_languages; let last = last;">
+          <p class="values p-0 mt-0 mb-0">{{language.name }}<span *ngIf="!last">,</span></p>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <movie-user-rating (rated)="userRating($event)" [rating]=".5"></movie-user-rating>
+  </div>
+</div>

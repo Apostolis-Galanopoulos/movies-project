@@ -1,0 +1,13 @@
+<div class="p-fluid grid w-100" [formGroup]="form">
+  <movie-button class="col-3" [routerLink]="['/collections/manage/']" [label]="'Cancel'"></movie-button>
+  <h3 class="mb-4">Create a new collection</h3>
+  <div class="field col-12 md:col-4 mb-5">
+     <movie-input formControlName="title" [label]="'Title'"></movie-input>
+  </div>
+   <div class="field col-12 md:col-4">
+    <movie-textarea formControlName="description" [label]="'Description'"></movie-textarea>
+  </div>
+  <div class="field col-12 md:col-4">
+   <movie-button (clicked)="save()" [disabled]="form.invalid" [label]="'Save'"></movie-button>
+  </div>
+</div>

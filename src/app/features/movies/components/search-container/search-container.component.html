@@ -1,0 +1,7 @@
+<div class="d-flex flex-column container">
+  <movie-search-input class="col-12" (searchKey)="searchMovie($event)"></movie-search-input>
+  <movie-search-display (addToCollection)="addToCollection($event)" class="row" [movies$]="movies$"></movie-search-display>
+  <movie-paginator class="row" (rowsChanged)="rowsChanged($event)"
+                  [totalRecords]="(movies$ | async)?.total_results">
+  </movie-paginator>
+</div>

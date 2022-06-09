@@ -1,0 +1,7 @@
+<div class="grid p-fluid">
+  <div class="col-12">
+      <div class="p-inputgroup">
+          <input [formControl]="search" placeholder="Search for a movie, tv show, person......" type="text" pInputText>
+          <button [disabled]="search.errors" type="button" pButton pRipple (click)="searchMovie()" label="Search"></button>
+      </div>
+  </div>

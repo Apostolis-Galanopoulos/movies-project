@@ -1,0 +1,7 @@
+<ng-container *ngFor="let movie of (movies$ | async)?.results; trackBy: trackByFn">
+  <movie-card (addToCollection)="clickEvent($event)" [collected]="collection$ | async"
+  [card]="movie"></movie-card>
+</ng-container>
+<ng-container *ngIf="(movies$ | async)?.total_results === 0">
+  <p>No Results</p>
+</ng-container>

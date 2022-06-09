@@ -1,0 +1,19 @@
+<div class="card">
+  <div [routerLink]="['/movie/detail/', card.id]" class="card-info">
+    <div class="poster">
+      <img [src]="card.poster_path" [alt]="card.title">
+    </div>
+    <div class="title">
+      <h2 class="mb-1">
+        {{card.title}}
+      </h2>
+        <movie-rating class="rating" [rating]="card.vote_average"></movie-rating>
+    </div>
+  </div>
+
+  <div class="actions">
+    <movie-drop-down (valueChanged)="valueChanged($event)"
+      [options]="collections$ | async" placeholder="Collection" [selected]="(collection$ | async)">
+    </movie-drop-down>
+  </div>
+</div>

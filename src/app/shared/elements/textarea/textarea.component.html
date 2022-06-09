@@ -1,0 +1,5 @@
+<span class="p-float-label">
+  <textarea [formControl]="formControl" inputId="textarea" rows="3" style="resize: none;" cols="30" pInputTextarea></textarea>
+  <label for="textarea">{{label}}</label>
+  <span>{{control.touched && !control.valid?"This field is required":""}}</span>
+</span>

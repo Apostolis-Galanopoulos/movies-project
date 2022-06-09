@@ -1,0 +1,72 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "target": "es2016",
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@features/*": [
+        "src/app/features/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@modules/*": [
+        "src/app/core/modules/*"
+      ],
+      "@network/*": [
+        "src/app/core/modules/network/*"
+      ],
+    },
+    "types": []
+  },
+  "exclude": [
+    "node_modules",
+    "coverage"
+  ],
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  }
+}
